@@ -4,7 +4,8 @@
 This plugin adds snippets for urneal.
 
 ## Instalation
-I recommend you use vundle.
+Vundle: 
+`Plugin 'VZout/Vunreal'`
 
 ## Dependencies
 * UltiSnips - For snippets
