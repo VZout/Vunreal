@@ -1,0 +1,32 @@
+snippet ulog "Unreal Log" b
+UE_LOG(Log${1:Category}, ${2:Fatal,Error,Warning,Display,Log,Verbose,VeryVerbose}, ${3:TEXT("${4:FormatStr}")}, ${5:...});$0
+endsnippet
+
+snippet uspawnemittera "Spawn emitter attached"
+UGameplayStatics::SpawnEmitterAttached(${1:ParticleSystem}, ${2:AttachToComponent}, ${3:SocketName}, ${4:Location}, ${5:Rotation}, ${6:EAttachLocation::SnapToTarget}, ${7:AutoDestroy?});$0
+endsnippet
+
+snippet uspawnemitterl "Spawn emitter at location"
+UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ${1:ParticleSystem}, ${2:Location}, ${3:Rotation}, ${4:AutoDestroy?});$0
+endsnippet
+
+snippet uplaysounda "Play sound at location (simple)"
+UGameplayStatics::PlaySoundAttached(${1:SoundToPlay}, ${2:ComponentToAttachTo}, ${3:SocketName}, ${4:Location}, ${5:EAttachLocation::SnapToTarget}, ${6:AutoDestroy?});$0
+endsnippet
+
+snippet uplaysoundl "Play sound attached (simple)"
+UGameplayStatics::PlaySoundAtLocation(World, ${1:SoundToPlay}, ${2:Location}, ${3:Rotation});$0
+endsnippet
+
+snippet usettimer "Set a timer"
+GetWorld()->GetTimerManager().SetTimer(${1:FTimerHandle}, this, &${2:Class::Function}, ${3:DelayTime}, ${4:Loop?});$0
+endsnippet
+
+snippet usettimer "Clear a timer"
+GetWorld()->GetTimerManager().SetTimer(${1:FTimerHandle}, this, &${2:Class::Function}, ${3:DelayTime}, ${4:Loop?});$0
+endsnippet
+
+snippet usubclass "urneal engine sublclass"
+TSubclassOf<class ${1:ClassName}> ${2:VarName};$0
+endsnippet
+
