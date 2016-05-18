@@ -22,11 +22,51 @@ snippet usettimer "Set a timer"
 GetWorld()->GetTimerManager().SetTimer(${1:FTimerHandle}, this, &${2:Class::Function}, ${3:DelayTime}, ${4:Loop?});$0
 endsnippet
 
-snippet usettimer "Clear a timer"
-GetWorld()->GetTimerManager().SetTimer(${1:FTimerHandle}, this, &${2:Class::Function}, ${3:DelayTime}, ${4:Loop?});$0
+snippet ucleartimer "Clear a timer"
+GetWorld()->GetTimerManager().ClearTimer(${1:FTimerHandle});$0
 endsnippet
 
-snippet usubclass "urneal engine sublclass"
+snippet usubcl "urneal engine sublclass"
 TSubclassOf<class ${1:ClassName}> ${2:VarName};$0
 endsnippet
 
+snippet up "unreal engine uproperty"
+UPROPERTY(${1:EditAnywhere});$0
+endsnippet
+
+snippet uf "unreal engine ufunction"
+UFUNCTION(${1:});$0
+endsnippet
+
+snippet uinttext "unreal engine integer to a ftext"
+FText::FromString(FString::FromInt(${1:MyInt}));$0
+endsnippet
+
+snippet uintstring "unreal engine integer to a fstring"
+FText::FString::FromInt(${1:MyInt});$0
+endsnippet
+
+snippet ufloattext "unreal engine float to a ftext"
+FText::FromString(FString::SanitizeFloat(${1:MyFloat}));$0
+endsnippet
+
+snippet ufloatstring "unreal engine float to a fstring"
+FString::SanitizeFloat(${1:MyFloat});$0
+endsnippet
+
+###############################################
+###        Snippets for Team6 studio's      ###
+### If you don't work there this is useless ###
+###############################################
+
+snippet t6err "(T6) Print a error" b
+PrintError(TEXT("${1:Default Error Message}"));$0
+endsnippet
+
+snippet t6spawn "(T6) spawn a actor" b
+FActorSpawnParameters Params;
+${1:Params.Instigator = ${2:this};}
+${3:Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::${4:AlwaysSpawn};}
+
+TActorSpawner<"${5:AActor}>::SpawnActor(${6:this}, ${7:AActor::StaticClass()}, ${8:FTransform::Identity}, ${9:Params})$0
+endsnippet
