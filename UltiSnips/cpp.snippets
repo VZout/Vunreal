@@ -63,6 +63,12 @@ snippet t6err "(T6) Print a error" b
 PrintError(TEXT("${1:Default Error Message}"));$0
 endsnippet
 
+snippet usettimer "(T6) Start a T6 timer"
+FT6Timer::StartTimer(${1:TimeF}, [=](){
+	$0
+});
+endsnippet
+
 snippet t6spawn "(T6) spawn a actor" b
 FActorSpawnParameters Params;
 ${1:Params.Instigator = ${2:this};}
